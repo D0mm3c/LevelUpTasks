@@ -15,11 +15,12 @@
 ## 🧩 Phase 2: Core Models & XP Logic
 1. Create Task class (name, description, XP reward) ✅
 
-2. Create UserStats class (XP, level, XP needed for next level) 
+2. Create User, UserStats class (XP, level, xp needed for next level = Level^2 ) ✅
 
-3. Define XP and level-up calculation system
+3. Define XP and level-up calculation system ✅
 
-4. Decide on data format for saving (JSON via Gson)
+4. Decide on data format for saving (JSON via Gson) ✅
+5. Create & Implement Utility Classes UserStatsManager
 
 ## 🎛️ Phase 3: Basic UI & Functionality
 1. Build base UI: task list (ListView), XP display (Label + ProgressBar), buttons
