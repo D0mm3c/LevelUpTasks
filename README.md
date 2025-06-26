@@ -58,7 +58,7 @@ See ROADMAP.md for the full development plan and future features.
 Contributions are welcome! Please open issues or submit pull requests.
 
 ## License
-This project is licensed under the MIT License. See the ./LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
 ## Contact
 Created by Dominic Dietz - 
