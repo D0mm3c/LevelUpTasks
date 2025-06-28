@@ -6,6 +6,9 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import leveluptasks.model.Task;
+import leveluptasks.model.User;
+import leveluptasks.model.UserStats;
+import leveluptasks.util.UserStatsManager;
 
 public class Main extends Application {
 
@@ -22,6 +25,20 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-        launch(args);
+
+
+        UserStatsManager statsManager = new UserStatsManager();
+        UserStats userStats = statsManager.getUserStats();
+        User user = new User("Max", userStats);
+
+
+
+        userStats.addXp(10);
+
+        statsManager.updateUserStats(userStats);
+        //launch(args);
+
+
+
     }
 }
