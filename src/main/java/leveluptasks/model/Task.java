@@ -1,24 +1,31 @@
 package leveluptasks.model;
 
 public class Task {
-    private String name;
-    private String reward;
+    private String taskName;
+    private String taskDescription;
+    private int TaskXp;
 
-    public Task(String name, String reward) {
-        this.name = name;
-        this.reward = reward;
+    public Task(String pName, String pTaskDescription, int pTaskXp) {
+        this.taskName = pName;
+        this.taskDescription = pTaskDescription;
     }
 
-    public String getName() {
-        return name;
+    public String getTaskName() {
+        return taskName;
     }
 
-    public String getReward() {
-        return reward;
+    public void setTaskName(String pTaskName) {
+        if(pTaskName == null || pTaskName.isBlank()) throw new IllegalArgumentException("Name darf nicht leer sein!");
+        this.taskName = pTaskName;
     }
 
-    @Override
-    public String toString() {
-        return name + " (" + reward + ")";
+    public String getTaskDescription() {
+        return taskDescription;
     }
+
+    public void setTaskDescription(String pTaskDescription) {
+        if(pTaskDescription == null || pTaskDescription.isBlank()) throw new IllegalArgumentException("Description darf nicht leer sein!");
+        this.taskDescription = pTaskDescription;
+    }
+
 }

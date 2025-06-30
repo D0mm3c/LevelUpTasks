@@ -62,4 +62,9 @@ public class UserStats {
             setXpToNextLevel(calculateXpToNextLevel(getLevel()));
         }
     }
+
+    @Override
+    public String toString() {
+        return String.format("Level: %d, XP: %d, XP to next level: %d, Total XP: %d", getLevel(), getXp(), getXpToNextLevel(), getTotalXp());
+    }
 }

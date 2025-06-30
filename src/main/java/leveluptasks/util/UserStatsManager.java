@@ -12,7 +12,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class UserStatsManager {
-    private static final Path USER_STATS_PATH = Paths.get("resources", "data", "userstats.json");
+    private static final Path USER_STATS_PATH = Paths.get("data", "userstats.json");
     private final Gson gson = new Gson();
 
     private UserStats userStats;
