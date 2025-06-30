@@ -34,7 +34,7 @@
 
 5. Show basic level-up notification (e.g., dialog or alert)
 
-💾 Phase 4: Persistence
+## 💾 Phase 4: Persistence
 1. Load tasks and stats from a local JSON file on startup
 
 2. Save task completion and XP to file on changes
