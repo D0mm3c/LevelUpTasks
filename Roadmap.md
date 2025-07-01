@@ -35,11 +35,11 @@
 5. Show basic level-up notification (e.g., dialog or alert)
 
 ## 💾 Phase 4: Persistence
-1. Load tasks and stats from a local JSON file on startup
+1. Load tasks and stats from a local JSON file on startup ✅
 
-2. Save task completion and XP to file on changes
+2. Save task completion and XP to file on changes ✅
 
-3. Implement auto-save or save-on-exit logic
+3. Implement auto-save or save-on-exit logic ✅
 
 ## 🎉 Phase 5: Gamification & Feedback
 1. Add animations for task completion (e.g., fade, bounce)
