@@ -73,4 +73,14 @@ public class TaskStorage{
     public ArrayList<Task> getTaskList(){
         return taskList;
     }
+
+    public void deleteTask(Task pTask){
+        taskList.remove(pTask);
+        save();
+    }
+
+    public void deleteTaskList(){
+        taskList.clear();
+        save();
+    }
 }

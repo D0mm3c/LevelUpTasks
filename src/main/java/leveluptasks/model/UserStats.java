@@ -6,10 +6,21 @@ public class UserStats {
     private int xpToNextLevel;
     private int totalXp;
 
+    private String name = "Dude";
+
     public UserStats() {
+        setName(name);
         this.level = 1;
         this.xp = 0;
         this.xpToNextLevel = calculateXpToNextLevel(getLevel());
+    }
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        if(name == null || name.isBlank()) throw new IllegalArgumentException("Name darf nicht leer sein!");
+        this.name = name;
     }
 
     public int getXp() {
@@ -67,4 +78,5 @@ public class UserStats {
     public String toString() {
         return String.format("Level: %d, XP: %d, XP to next level: %d, Total XP: %d", getLevel(), getXp(), getXpToNextLevel(), getTotalXp());
     }
+
 }
