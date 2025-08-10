@@ -17,21 +17,15 @@ import leveluptasks.util.UserStatsManager;
 public class DashboardView {
 
     private VBox root;
-    private HBox topBar;
-    private HBox xpBarBox;
-    private Label usernameLabel;
     private Label levelLabel;
     private ProgressBar xpProgressBar;
     private Label xpLabel;
     private ListView<Task> taskListView;
-    private Button finishTaskButton;
-    private Button addTaskButton;
-    private Button deleteButton;
 
-    private UserStatsManager userStats;
-    private TaskStorage taskStorage;
+    private final UserStatsManager userStats;
+    private final TaskStorage taskStorage;
 
-    private ObservableList<Task> ObservableTaskList;
+    private final ObservableList<Task> ObservableTaskList;
 
 
     public DashboardView(UserStatsManager pUserStats, TaskStorage pTaskStorage) {
@@ -58,13 +52,13 @@ public class DashboardView {
         root.setPadding(new Insets(15));
 
         // Top Bar: Username and Badge
-        topBar = new HBox(10);
-        usernameLabel = new Label(userStats.getUserStats().getName());
+        HBox topBar = new HBox(10);
+        Label usernameLabel = new Label(userStats.getUserStats().getName());
         levelLabel = new Label(String.format("Level: %d", userStats.getUserStats().getLevel()));
         topBar.getChildren().addAll(usernameLabel, levelLabel);
 
         // XP Progress Bar
-        xpBarBox = new HBox(10);
+        HBox xpBarBox = new HBox(10);
         xpProgressBar = new ProgressBar((double) userStats.getUserStats().getXp() /userStats.getUserStats().getXpToNextLevel()); // Example value
         xpProgressBar.setPrefWidth(300);
         xpLabel = new Label(String.format("XP: %d/%d", userStats.getUserStats().getXp(), userStats.getUserStats().getXpToNextLevel()));
@@ -76,11 +70,11 @@ public class DashboardView {
 
         // Task List View
         taskListView = new ListView<>(ObservableTaskList);
-        taskListView.setCellFactory(lv -> new ListCell<Task>(){
+        taskListView.setCellFactory(lv -> new ListCell<>() {
             @Override
-            protected void updateItem(Task task, boolean empty){
+            protected void updateItem(Task task, boolean empty) {
                 super.updateItem(task, empty);
-                if(empty || task == null){
+                if (empty || task == null) {
                     setText(null);
                     setGraphic(null);
                 } else {
@@ -105,11 +99,11 @@ public class DashboardView {
         // Bottom Button Bar
         HBox buttonBar = new HBox(10);
         buttonBar.setAlignment(Pos.CENTER);
-        finishTaskButton = new Button("Finished Task");
+        Button finishTaskButton = new Button("Finished Task");
         finishTaskButton.setOnAction(this::finishTask);
-        addTaskButton = new Button("Add Task");
+        Button addTaskButton = new Button("Add Task");
         addTaskButton.setOnAction(this::addTask);
-        deleteButton = new Button("Delete Task");
+        Button deleteButton = new Button("Delete Task");
         deleteButton.setOnAction(this::deleteTask);
         buttonBar.getChildren().addAll(finishTaskButton, addTaskButton, deleteButton);
 
@@ -118,10 +112,6 @@ public class DashboardView {
     }
     public VBox getRoot() {
         return root;
-    }
-
-    public Label getUsernameLabel() {
-        return usernameLabel;
     }
 
     private void updateTopBar(){
@@ -158,9 +148,6 @@ public class DashboardView {
 
     private void addTask(ActionEvent event) {
         showAddTaskDialog();
-        //Task newTask = new Task("Task", "Description", 10);
-        //ObservableTaskList.add(newTask);
-        //taskStorage.addTask(newTask);
     }
 
     private void deleteTask(ActionEvent event) {

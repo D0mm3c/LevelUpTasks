@@ -68,11 +68,6 @@ public class UserStatsManager {
         return userStats;
     }
 
-    // Updates the in-memory stats and immediately saves
-    public void updateUserStats(UserStats newStats) {
-        this.userStats = newStats;
-        save();
-    }
     public boolean addXp(int xp){
         return(getUserStats().addXp(xp));
     }

@@ -1,7 +1,7 @@
 package leveluptasks.model;
 
 public class Task {
-    private String taskName;
+    private final String taskName;
     private String taskDescription;
     private int TaskXp;
 
@@ -13,11 +13,6 @@ public class Task {
 
     public String getTaskName() {
         return taskName;
-    }
-
-    public void setTaskName(String pTaskName) {
-        if(pTaskName == null || pTaskName.isBlank()) throw new IllegalArgumentException("Name darf nicht leer sein!");
-        this.taskName = pTaskName;
     }
 
     public String getTaskDescription() {
