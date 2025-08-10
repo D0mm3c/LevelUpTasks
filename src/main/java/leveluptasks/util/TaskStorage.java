@@ -2,11 +2,13 @@ package leveluptasks.util;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
+import com.google.gson.reflect.TypeToken;
 import leveluptasks.model.Task;
 
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
+import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -17,6 +19,8 @@ public class TaskStorage{
     private final Gson gson = new Gson();
 
     ArrayList<Task> taskList;
+
+    Type taskListType = new TypeToken<ArrayList<Task>>() {}.getType();
 
     public TaskStorage() {
         load();
@@ -32,7 +36,7 @@ public class TaskStorage{
             }
 
             try (Reader reader = Files.newBufferedReader(USER_STATS_PATH)) {
-                taskList = gson.fromJson(reader, ArrayList.class);
+                taskList = gson.fromJson(reader, taskListType);
             }
 
             // If file is empty or invalid, create defaults

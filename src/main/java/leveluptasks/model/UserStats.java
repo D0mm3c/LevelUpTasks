@@ -63,7 +63,8 @@ public class UserStats {
         this.totalXp = totalXp;
     }
 
-    public void addXp(int xp) {
+    //Add XP, returns true if level up
+    public boolean addXp(int xp) {
         setXp(getXp() + xp);
         addTotalXp(xp);
 
@@ -71,7 +72,9 @@ public class UserStats {
             setXp(getXp() - calculateXpToNextLevel(getLevel()));
             setLevel(getLevel() + 1);
             setXpToNextLevel(calculateXpToNextLevel(getLevel()));
+            return true;
         }
+        return false;
     }
 
     @Override

@@ -73,4 +73,7 @@ public class UserStatsManager {
         this.userStats = newStats;
         save();
     }
+    public boolean addXp(int xp){
+        return(getUserStats().addXp(xp));
+    }
 }
