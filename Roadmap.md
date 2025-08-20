@@ -53,6 +53,10 @@
 5. Allow unlocking themes or color schemes through progress
 
 ## 🎨 Phase 6: UI Polish & UX Improvements
+### Phase 6.1: Build Clean UI Basis with CSS
+    1. Get okay Color Ideas(purple?)
+    2. custom border cause OS Borders are fng annoying
+    3. FIND SOMEONE WHO CAN DO FRONTEND SHIT
 1. Apply clean, modern JavaFX styling (with CSS)
 
 2. Support dark/light modes or customizable themes

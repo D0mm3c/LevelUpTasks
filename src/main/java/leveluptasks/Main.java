@@ -3,6 +3,7 @@ package leveluptasks;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import leveluptasks.controller.DashboardView;
 import leveluptasks.util.TaskStorage;
 import leveluptasks.util.UserStatsManager;
@@ -16,6 +17,9 @@ public class Main extends Application {
         DashboardView dashBoard = new DashboardView(userStatsManager, taskStorage);
 
         Scene scene = new Scene(dashBoard.getRoot(), 410, 500);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
+
+
         primaryStage.setScene(scene);
         primaryStage.setTitle("LevelUp Tasks");
         primaryStage.show();

@@ -9,7 +9,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import leveluptasks.model.Task;
+
 
 import leveluptasks.util.TaskStorage;
 import leveluptasks.util.UserStatsManager;
@@ -50,6 +52,10 @@ public class DashboardView {
     private void createUI() {
         root = new VBox(10);
         root.setPadding(new Insets(15));
+
+        root.getStylesheets().add(
+                getClass().getResource("/styles/styles.css").toExternalForm()
+        );
 
         // Top Bar: Username and Badge
         HBox topBar = new HBox(10);
@@ -157,13 +163,14 @@ public class DashboardView {
         taskStorage.deleteTask(selectedTask);
     }
 
+
+
     private void showAddTaskDialog(){
        Stage dialogStage = new Stage();
        VBox dialogVbox = new VBox(10);
        dialogVbox.setPadding(new Insets(15));
        dialogVbox.setAlignment(Pos.TOP_CENTER);
        Label titleLabel = new Label("Add Task");
-       titleLabel.setStyle("-fx-font-weight: bold; -fx-font-size: 16px;");
        dialogVbox.getChildren().add(titleLabel);
 
        Label taskNameLabel = new Label("Task Name:");
@@ -199,6 +206,9 @@ public class DashboardView {
        });
        dialogVbox.getChildren().addAll(taskNameLabel, taskNameTextField, taskDescriptionLabel, taskDescriptionTextArea, taskXpLabel, taskXpSlider, addButton);
        Scene scene = new Scene(dialogVbox, 300, 400);
+       scene.getStylesheets().add(
+               getClass().getResource("/styles/styles.css").toExternalForm()
+       );
        dialogStage.setScene(scene);
        dialogStage.show();
     }

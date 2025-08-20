@@ -1,0 +1,36 @@
+.root{
+    -fx-background-color: #a3a3c2;
+    -fx-font-family: "Bahnschrift", sans-serif;
+    -fx-font-weight: bold;
+    -fx-text-fill: grey;
+}
+.text-field{
+    -fx-background-color: #d1d1e0;
+    -fx-font-family: "Bahnschrift", sans-serif;
+    -fx-font-weight: bold;
+    -fx-text-fill: grey;
+}
+
+.text-area{
+    -fx-control-inner-background: #d1d1e0; /* Hintergrund der Textfläche */
+    -fx-background-color: #a3a3c2; /* Rahmenbereich */
+    -fx-font-family: "Bahnschrift", sans-serif;
+    -fx-font-weight: bold;
+    -fx-text-fill: grey;
+}
+
+.slider{
+    -fx-background-color: #a3a3c2;
+    -fx-font-family: "Bahnschrift", sans-serif;
+    -fx-font-weight: bold;
+    -fx-text-fill: grey;
+}
+
+.button{
+    -fx-background-color: #d1d1e0;
+}
+
+.list-view{
+    -fx-background-color: #5c5c8a;
+}
+
